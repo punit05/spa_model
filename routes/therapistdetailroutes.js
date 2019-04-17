@@ -8,16 +8,24 @@ app.post("/addtherapist",function(req,res)
 var TherapistEmail=req.body.TherapistEmail;
 var TherapistName=req.body.TherapistName;
 var TherapistPhoneNo=req.body.TherapistPhoneNo;
-var TherapistAddress=req.body.TherapistAddress;
+var doorNumber=req.body.doorNumber;
+var line1=req.body.line1;
+var line2=req.body.line2;
+var city=req.body.city;
+var state=req.body.state;
+var pincode=req.body.pincode;
 var TherapistServices=req.body.TherapistServices;
 var TherapistTimeSlot=req.body.TherapistTimeSlot;
-var AddTherapist={TherapistEmail:TherapistEmail,TherapistName:TherapistName,TherapistPhoneNo:TherapistPhoneNo,TherapistAddress:TherapistAddress
+var AddTherapist={TherapistEmail:TherapistEmail,TherapistName:TherapistName,TherapistPhoneNo:TherapistPhoneNo,
+    doorNumber:doorNumber,line1:line1,line2:line2,city:city,
+    state:state,pincode:pincode
 ,TherapistServices:TherapistServices,TherapistTimeSlot:TherapistTimeSlot}
     Therapist.find({'TherapistEmail':req.body.TherapistEmail},function(err,data)
     {
+        console.log("HERE");
         if(data.length==0)
         {
-            SpaDetail.create(AddTherapist,function(err,Therpist)
+            Therapist.create(AddTherapist,function(err,Therpist)
             {
                 if(err)
                 {

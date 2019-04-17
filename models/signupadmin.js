@@ -28,7 +28,7 @@ const SpaPanelSchema = new Schema({
     MobileNo:{
        type:String,
        required:true,
-       unique:true
+      // unique:true
     },
     OTP:{
        type:Number,
