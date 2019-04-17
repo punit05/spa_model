@@ -2,11 +2,10 @@ const mongoose=require("mongoose");
 var bcrypt=require("bcrypt");
 const saltRounds = 10;
 const SignUpAdmin=require("../models/signupadmin")
-const Nexmo = require('nexmo');
-const nexmo = new Nexmo({
-  apiKey: 'c5018cae',
-  apiSecret: 'hN8oaMUkd68xan93'
-});
+const SpaDetail=require("../models/propertyroutes");
+
+//const Nexmo = require('nexmo');
+
 module.exports = (app) => {
 
 
